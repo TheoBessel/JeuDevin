@@ -8,12 +8,12 @@ Exemples :
 R1: Comment "Faire deviner le nombre de l'ordinateur à l'utilisateur" ?
     Choisir le nombre de l'ordinateur        n: out
     { (n >= 1) Et (n <= 999) }
-    Trouve <- Faux
-    nb_prop <- 1
-    TantQue not Trouve Faire
+    nb_prop <- 0
+    Répéter
+        nb_prop <- nb_prop + 1
         Demander au joueur une proposition          prop: out; nb_prop : in
-        Traiter la proposition du joueur         prop, n : in; Trouve : in out 
-    Fin TanQue
+        Traiter la proposition du joueur         prop, n : in; Trouve : in out
+    Jusqu'à prop = n
     Afficher message victoire       nb_ordi, nb_prop: in        
 
 
@@ -37,7 +37,7 @@ R2 : Comment "Traiter la proposition du joueur" ?
     SinonSi nb_ordi < proposition_joueur Alors
         Afficher message trop grand
     Sinon
-        Trouve <- Vrai
+        Rien
     FinSi
 
 
