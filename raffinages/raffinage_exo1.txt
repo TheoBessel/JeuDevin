@@ -11,9 +11,10 @@ R1: Comment "Faire deviner le nombre de l'ordinateur à l'utilisateur" ?
     Trouve <- Faux
     nb_prop <- 1
     TantQue not Trouve Faire
-        Demander au joueur une proposition          prop: out; nb_prop: in; 
-        Traiter la proposition du joueur         prop, n, nb_prop : in   
+        Demander au joueur une proposition          prop: out; nb_prop : in
+        Traiter la proposition du joueur         prop, n : in; Trouve : in out 
     Fin TanQue
+    Afficher message victoire       nb_ordi, nb_prop: in        
 
 
 R2 : Comment "Choisir le nombre de l'ordinateur" ?
@@ -23,11 +24,10 @@ R2 : Comment "Choisir le nombre de l'ordinateur" ?
 
 
 R2 :  Comment "Demander au joueur une proposition" ?
-    a <- nb_prop
     Ecrire ("Proposition ")
-    Ecrire (a)
+    Ecrire (nb_prop)
     Ecrire (" :")
-    Lire (n)
+    Lire (prop)
 
 R2 : Comment "Traiter la proposition du joueur" ?
     nb_ordi <- n
@@ -37,9 +37,17 @@ R2 : Comment "Traiter la proposition du joueur" ?
     SinonSi nb_ordi < proposition_joueur Alors
         Afficher message trop grand
     Sinon
-        Afficher message victoire       nb_ordi, nb_prop: in        
         Trouve <- Vrai
     FinSi
+
+
+R3 : Comment "Afficher message victoire" ?
+    Ecrire ("Bravo. Vous avez trouvé ")
+    Ecrire (nb_ordi)
+    Ecrire (" en ")
+    Ecrire (nb_prop)
+    Ecrire("essais")
+
 
 
 R3 : Comment "Afficher message trop petit" ?
@@ -49,11 +57,3 @@ R3 : Comment "Afficher message trop petit" ?
 R3 : Comment "Afficher message trop grand" ?
     Ecrire ("Trop grand.")
 
-R3 : Comment "Afficher message victoire" ?
-    cible <- nb_ordi
-    ncoups <- nb_prop
-    Ecrire ("Bravo. Vous avez trouvé ")
-    Ecrire (cible)
-    Ecrire (" en ")
-    Ecrire (ncoups)
-    Ecrire("essais")
