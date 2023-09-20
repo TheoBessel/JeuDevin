@@ -1,11 +1,11 @@
-R0 : Faire deviner le nombre de l'ordinateur à l'utilisateur
+R0 : Faire deviner un nombre de l'ordinateur à l'utilisateur
 
 Exemples : 
 <@TODO : inserer exemples ici>
 
 
 
-R1: Comment "Faire deviner le nombre de l'ordinateur à l'utilisateur" ?
+R1: Comment "Faire deviner un nombre de l'ordinateur à l'utilisateur" ?
     Choisir le nombre de l'ordinateur        n: out
     { (n >= 1) Et (n <= 999) }
     nb_prop <- 0
@@ -18,7 +18,7 @@ R1: Comment "Faire deviner le nombre de l'ordinateur à l'utilisateur" ?
 
 
 R2 : Comment "Choisir le nombre de l'ordinateur" ?
-    Obtenir nombre aléatoire !-- Action élémentaire car fournie par un package
+    Obtenir nombre aléatoire n !-- Action élémentaire car fournie par un package
     Ecrire ("J'ai choisi un nombre entre 1 et 999.")
 
 
@@ -47,7 +47,6 @@ R3 : Comment "Afficher message victoire" ?
     Ecrire (" en ")
     Ecrire (nb_prop)
     Ecrire("essais")
-
 
 
 R3 : Comment "Afficher message trop petit" ?
