@@ -1,0 +1,8 @@
+project Jeu_Devin is
+   for Main use ("jeu_devin_exo3.ada");
+   for Object_Dir use "build";
+
+   package Compiler is
+      for Default_Switches ("Ada") use ("-g");
+   end Compiler;
+end Jeu_Devin;
