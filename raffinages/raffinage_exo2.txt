@@ -1,0 +1,34 @@
+R0 : Faire deviner à l'ordinateur un nombre choisi par l'utilisateur
+
+Exemples :
+
+------------------------------------------------------------
+
+R1 : Comment "Faire deviner à l'ordinateur un nombre choisi par l'utilisateur" ?
+    Faire choisir un nombre à l'utilisateur
+    Deviner le nombre choisi par l'utilisateur
+
+R2 : Comment "Faire choisir un nombre à l'utilisateur" ?
+    Choisi <- False
+    TantQue Non(Choisi) Faire
+        Écrire ("Avez-vous choisi un nombre entre 1 et 999 (o/n) ? ")
+        Lire le choix de l'utilisateur
+    FinTQ
+
+R2 : Comment "Deviner le nombre choisi par l'utilisateur" ?
+    Devine <- False
+    Nombre <- 500
+    TantQue Non(Devine) Faire
+        Proposer un nombre à l'utilisateur
+    FinTQ
+
+R3 : Comment "Lire le choix de l'utilisateur" ?
+    Lire (Choix)
+    Selon Choix Dans
+        'o' | 'O' => Choisi <- True
+        '0' => Quitter le programme
+        Autres => Écrire ("J'attends...\n")
+    FinSelon
+
+R3 : Comment "Proposer un nombre à l'utilisateur" ?
+    Écrire ("Proposition : ")
