@@ -1,34 +1,56 @@
+Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D
+
 R0 : Faire deviner à l'ordinateur un nombre choisi par l'utilisateur
 
-Exemples :
-
-------------------------------------------------------------
-
 R1 : Comment "Faire deviner à l'ordinateur un nombre choisi par l'utilisateur" ?
+    Initialiser le jeu
     Faire choisir un nombre à l'utilisateur
     Deviner le nombre choisi par l'utilisateur
 
-R2 : Comment "Faire choisir un nombre à l'utilisateur" ?
+R2 : Comment "Initialiser le jeu" ?
     Choisi <- False
+    Devine <- False
+    Compteur <- 0
+    Inf <- 1
+    Sup <- 1000
+
+R2 : Comment "Faire choisir un nombre à l'utilisateur" ?
     TantQue Non(Choisi) Faire
         Écrire ("Avez-vous choisi un nombre entre 1 et 999 (o/n) ? ")
         Lire le choix de l'utilisateur
     FinTQ
 
 R2 : Comment "Deviner le nombre choisi par l'utilisateur" ?
-    Devine <- False
-    Nombre <- 500
     TantQue Non(Devine) Faire
         Proposer un nombre à l'utilisateur
+        Demander un retour de l'utilisateur
     FinTQ
 
 R3 : Comment "Lire le choix de l'utilisateur" ?
     Lire (Choix)
     Selon Choix Dans
         'o' | 'O' => Choisi <- True
-        '0' => Quitter le programme
         Autres => Écrire ("J'attends...\n")
     FinSelon
 
 R3 : Comment "Proposer un nombre à l'utilisateur" ?
-    Écrire ("Proposition : ")
+    Nombre <- (Inf + Sup)/2;
+    Compteur <- Compteur + 1;
+    Écrire ("Proposition ") Écrire (Compteur) Écrire (" : ")
+    Écrire (Nombre)
+
+R3 : Comment "Demander un retour de l'utilisateur" ?
+    Choisi <- False
+    TantQue Non(Choisi) Faire
+        Écrire ("Trop (g)rand, trop (p)etit ou (t)rouvé ?")
+        Lire (Choix)
+        Selon Choix Dans
+            'g' | 'G' => Choisi <- True Sup <- Nombre
+            'p' | 'P' => Choisi <- True Inf <- Nombre
+            't' | 'T' => Choisi <- True Devine <- True Écrire ("J'ai trouvé ") Écrire (Nombre) Écrire (" en ") Écrire (Compteur) 
+            Si Compteur = 1 Alors Écrire (" essai.\n\n") Sinon Écrire (" essais.\n\n") FinSi
+            Autres => Écrire ("Je n'ai pas compris. Merci de répondre :\n
+                                \t g si ma proposition est trop grande\n
+                                \t p si ma proposition est trop petite\n
+                                \t t si j'ai trouvé le nombre\n")
+    FinTQ
