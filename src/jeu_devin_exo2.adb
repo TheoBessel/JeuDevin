@@ -3,9 +3,51 @@ with Ada.Integer_Text_Io;  use Ada.Integer_Text_Io;
 with Alea;
 
 -- Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D
---
--- TODO: à compléter...
+
 procedure Jeu_Devin_Exo2 is
+	Choisi, Devine : Boolean;
+	Choix : Character;
+	Nombre, Compteur, Inf, Sup : Integer;
+-- Faire deviner à l'ordinateur un nombre choisi par l'utilisateur
 begin
-	Put_Line ("Jeu_Devin_Exo2 : à faire !");
+	-- Initialiser le jeu
+	Choisi := False;
+	Devine := False;
+	Compteur := 0;
+	Inf := 1;
+	Sup := 1000;
+	-- Faire choisir un nombre à l'utilisateur
+	while not(Choisi) loop
+		Put("Avez-vous choisi un nombre entre 1 et 999 (o/n) ? ");
+		-- Lire le choix de l'utilisateur
+		Get(Choix);
+		case Choix is
+			when 'o' | 'O' => Choisi := True;
+			when others => Put_Line("J'attends...");
+		end case;
+	end loop;
+	-- Deviner le nombre choisi par l'utilisateur
+	while not(Devine) loop
+		-- Proposer un nombre à l'utilisateur
+		Nombre := (Inf + Sup)/2;
+		Compteur := Compteur + 1;
+		Put("Proposition "); Put(Compteur,1); Put(" : "); Put(Nombre,1);New_Line;
+		-- Demander un retour de l'utilisateur
+		Choisi := False;
+		while not(Choisi) loop
+			Put("Trop (g)rand, trop (p)etit ou (t)rouvé ? ");
+			Get(Choix);
+			case Choix is
+				when 'g' | 'G' => Choisi := True; Sup := Nombre;
+				when 'p' | 'P' => Choisi := True; Inf := Nombre;
+				when 't' | 'T' => Choisi := True; Devine := True;
+								  Put("J'ai trouvé "); Put(Nombre,1); Put(" en "); Put(Compteur,1);
+								  if Compteur = 1 then Put_Line(" essai."); else Put_Line(" essais."); end if; New_Line;
+				when others => Put_Line("Je n'ai pas compris. Merci de répondre :");
+							   Put_Line("   g si ma proposition est trop grande");
+							   Put_Line("   p si ma proposition est trop petite");
+							   Put_Line("   t si j'ai trouvé le nombre\n");
+			end case;
+		end loop;
+	end loop;
 end Jeu_Devin_Exo2;
