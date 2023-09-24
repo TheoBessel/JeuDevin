@@ -24,6 +24,7 @@ R2 : Comment "Deviner le nombre choisi par l'utilisateur" ?
     TantQue Non(Devine) Faire
         Proposer un nombre à l'utilisateur
         Demander un retour de l'utilisateur
+        Vérifier que l'utilisateur ne triche pas
     FinTQ
 
 R3 : Comment "Lire le choix de l'utilisateur" ?
@@ -54,3 +55,9 @@ R3 : Comment "Demander un retour de l'utilisateur" ?
                                 \t p si ma proposition est trop petite\n
                                 \t t si j'ai trouvé le nombre\n")
     FinTQ
+
+R3 : Comment "Vérifier que l'utilisateur ne triche pas" ?
+    Si (Inf = Sup Et Choix /= 't' | 'T') Ou (Sup = 999 Et Choix = 'p' | 'P') Ou (Inf = 0 Et Choix = 'g' | 'G') Alors
+            Écrire ("Vous trichez. J’arrête cette partie.\n")
+            Quitter le programme # Voir raffinage_exo3.txt
+    FinSi
