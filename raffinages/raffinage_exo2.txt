@@ -57,7 +57,8 @@ R3 : Comment "Demander un retour de l'utilisateur" ?
     FinTQ
 
 R3 : Comment "Vérifier que l'utilisateur ne triche pas" ?
-    Si (Inf = Sup Et Choix /= 't' | 'T') Ou (Sup = 999 Et Choix = 'p' | 'P') Ou (Inf = 0 Et Choix = 'g' | 'G') Alors
+    Si ((Sup - Inf) <= 1 Et Choix /= 't' | 'T') Ou (Nombre = 999 Et Choix = 'p' | 'P') Ou (Nombre = 1 Et Choix = 'g' | 'G') Alors
             Écrire ("Vous trichez. J’arrête cette partie.\n")
+            Devine <- True
             Quitter le programme # Voir raffinage_exo3.txt
     FinSi

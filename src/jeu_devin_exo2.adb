@@ -14,7 +14,7 @@ begin
 	Choisi := False;
 	Devine := False;
 	Compteur := 0;
-	Inf := 1;
+	Inf := 0;
 	Sup := 1000;
 	-- Faire choisir un nombre à l'utilisateur
 	while not(Choisi) loop
@@ -50,11 +50,12 @@ begin
 			end case;
 		end loop;
 		-- Vérifier que l'utilisateur ne triche pas
-		if ((Inf = Sup and Choix /= 't' and Choix /= 'T') 
-			or (Sup = 999 and (Choix = 'p' or Choix = 'P')) 
-			or (Inf = 0 and (Choix = 'g' or Choix = 'G'))) then
+		if (((Sup - Inf) <= 1 and Choix /= 't' and Choix /= 'T') 
+			or (Nombre = 999 and (Choix = 'p' or Choix = 'P')) 
+			or (Nombre = 1 and (Choix = 'g' or Choix = 'G'))) then
             	Put_Line("Vous trichez. J’arrête cette partie.");
 				-- Quitter le programme
+				Devine := True;
 				Put_Line("Au revoir...");
     			Quitter := True;
 		end if;
