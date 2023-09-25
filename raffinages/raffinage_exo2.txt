@@ -5,7 +5,7 @@ R0 : Faire deviner à l'ordinateur un nombre choisi par l'utilisateur
 R1 : Comment "Faire deviner à l'ordinateur un nombre choisi par l'utilisateur" ?
     Initialiser le jeu                                                              Choisi, Devine, Compteur, Inf, Sup : out
     Faire choisir un nombre à l'utilisateur                                         Choisi, Choix : in out
-    Deviner le nombre choisi par l'utilisateur
+    Deviner le nombre choisi par l'utilisateur                                      Nombre, Compteur, Devine, Choisi, Choix, Inf, Sup : in out; Quitter : out
 
 R2 : Comment "Initialiser le jeu" ?
     Choisi <- False
