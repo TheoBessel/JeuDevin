@@ -50,9 +50,7 @@ begin
 			end case;
 		end loop;
 		-- Vérifier que l'utilisateur ne triche pas
-		if (((Sup - Inf) <= 1 and Choix /= 't' and Choix /= 'T') 
-			or (Nombre = 999 and (Choix = 'p' or Choix = 'P')) 
-			or (Nombre = 1 and (Choix = 'g' or Choix = 'G'))) then
+		if ((Sup - Inf) <= 1 and Choix /= 't' and Choix /= 'T') then
             	Put_Line("Vous trichez. J’arrête cette partie.");
 				-- Quitter le programme
 				Devine := True;
