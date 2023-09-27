@@ -6,12 +6,12 @@ Exemples :
 
 
 R1: Comment "Faire deviner un nombre de l'ordinateur à l'utilisateur" ?
-    Choisir le nombre de l'ordinateur        n: out
+    Choisir le nombre de l'ordinateur        n: out Entier
     { (n >= 1) Et (n <= 999) }
     nb_prop <- 0
     Répéter
         nb_prop <- nb_prop + 1
-        Demander au joueur une proposition          prop: out; nb_prop : in
+        Demander au joueur une proposition          prop: out Entier; nb_prop : in
         Traiter la proposition du joueur         prop, n : in; Trouve : in out
     Jusqu'à prop = n
     Afficher message victoire       nb_ordi, nb_prop: in        
