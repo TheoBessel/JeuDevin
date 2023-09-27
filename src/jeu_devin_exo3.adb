@@ -34,8 +34,10 @@ begin
             when 0 =>   New_Line;
                         Put("Au revoir...");
                         Quitter := True;
-            when 1 => Jeu_Devin_Exo1;
-            when 2 => Jeu_Devin_Exo2;
+            when 1 =>   New_Line; 
+                        Jeu_Devin_Exo1;
+            when 2 =>   New_Line;
+                        Jeu_Devin_Exo2;
             when others =>  New_Line;
                             Put("Choix incorrect.");
                             New_Line; 

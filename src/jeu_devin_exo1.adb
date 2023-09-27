@@ -19,7 +19,7 @@ begin
 	
 	-- Choisir le nombre de l'ordinateur
 	Get_Random_Number(nb_ordi);
-	Put("J'ai choisi un nombre entre 1 et 999.");
+	Put("J'ai choisi un nombre compris entre 1 et 999.");
 	New_Line;
 
 	nb_prop := 0;
@@ -29,7 +29,7 @@ begin
 		-- Demander une proposition_joueur au joueur
 		Put("Proposition ");
 		Put(nb_prop, 1);
-		Put(": ");
+		Put(" : ");
 		Get(proposition_joueur);
 
 		-- Traiter la proposition_joueur du joueur

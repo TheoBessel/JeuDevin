@@ -15,7 +15,7 @@ R0 : Faire deviner un nombre de l'ordinateur à l'utilisateur
   
 **R2** : **Comment** "Choisir le nombre de l'ordinateur" ?  
     Obtenir nombre aléatoire n !-- Action élémentaire car fournie par un package  
-    **Ecrire** ("J'ai choisi un nombre entre 1 et 999.")  
+    **Ecrire** ("J'ai choisi un nombre compris entre 1 et 999.")  
   
   
   
