@@ -40,13 +40,11 @@ begin
 			case Choix is
 				when 'g' | 'G' => Choisi := True; Sup := Nombre;
 				when 'p' | 'P' => Choisi := True; Inf := Nombre;
-				when 't' | 'T' => Choisi := True; Devine := True;
-								  Put("J'ai trouvé "); Put(Nombre,1); Put(" en "); Put(Compteur,1);
-								  if Compteur = 1 then Put_Line(" essai."); else Put_Line(" essais."); end if; New_Line;
+				when 't' | 'T' => Choisi := True; Devine := True; Put_Line("J'ai trouvé "&Integer'Image(Nombre)&" en "&Integer'Image(Compteur)&" essai(s).");
 				when others => Put_Line("Je n'ai pas compris. Merci de répondre :");
 							   Put_Line("   g si ma proposition est trop grande");
 							   Put_Line("   p si ma proposition est trop petite");
-							   Put_Line("   t si j'ai trouvé le nombre\n");
+							   Put_Line("   t si j'ai trouvé le nombre");
 			end case;
 		end loop;
 		-- Vérifier que l'utilisateur ne triche pas
