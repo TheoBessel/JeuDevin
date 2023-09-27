@@ -57,7 +57,7 @@ E3. On veut limiter le nombre de tentatives à 10.  Si le nombre n'a pas été
 trouvé avant, le joueur a perdu.  Comment prendre en compte cette évolution ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : On change la condition `prop = n` de la boucle Jusqu'à du raffinage R1 en `prop = n OU nb_prop = 10`
 
 
 --------------------------------------------------------------------------------
