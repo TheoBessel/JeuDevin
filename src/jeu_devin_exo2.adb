@@ -5,7 +5,6 @@ with Alea;
 -- Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D
 
 procedure Jeu_Devin_Exo2 is
-	Quitter : Boolean;
 	Choisi, Devine : Boolean;
 	Choix : Character;
 	Nombre, Compteur, Inf, Sup : Integer;
