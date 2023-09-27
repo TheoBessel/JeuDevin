@@ -33,26 +33,18 @@ R2 : Comment "Traiter la proposition du joueur" ?
     nb_ordi <- n
     proposition_joueur <- prop
     Si nb_ordi > proposition_joueur Alors
-        Afficher message trop petit
+        Ecrire ("Trop petit.")
     SinonSi nb_ordi < proposition_joueur Alors
-        Afficher message trop grand
+        Ecrire ("Trop grand.")
     Sinon
         Rien
     FinSi
 
 
-R3 : Comment "Afficher message victoire" ?
+R2 : Comment "Afficher message victoire" ?
+    Ecrire ("Trouvé.")
     Ecrire ("Bravo. Vous avez trouvé ")
     Ecrire (nb_ordi)
     Ecrire (" en ")
     Ecrire (nb_prop)
-    Ecrire("essais")
-
-
-R3 : Comment "Afficher message trop petit" ?
-    Ecrire ("Trop petit.")
-
-
-R3 : Comment "Afficher message trop grand" ?
-    Ecrire ("Trop grand.")
-
+    Ecrire ("essai(s).")
