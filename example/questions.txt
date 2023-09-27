@@ -10,21 +10,21 @@ C1. Que se passe-t-il si dans Jeu_Devin_Exo2 l'utilisateur répond d'abord trop
 grand puis toujours trop petit ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : L'ordinateur détecte que l'utilisateur triche
 
 
 --------------------------------------------------------------------------------
 C2. Est-on sûr que Jeu_Devin_Exo1 se termine ?  Quel argument peut-on donner ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : Non. Si l'utilisateur fourni incessamment une proposition fausse sans la corriger le programme continue de lui demander une nouvelle proposition et ainsi ne termine jamais.
 
 
 --------------------------------------------------------------------------------
 C3. Est-on sûr que Jeu_Devin_Exo2 se termine ?  Quel argument peut-on donner ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : Oui. En effet la quantité Sup-Inf est entière, strictement décroissante et minorée donc l'algorithme se termine quand l'ordinateur a trouvé ou détecté une triche de la part de l'utilisateur.
 
 
 --------------------------------------------------------------------------------
@@ -32,7 +32,7 @@ F1. Les noms Jeu_Devin_Exo1, Jeu_Devin_Exo2 et Jeu_Devin_Exo3 ne sont pas très
 parlants.  Par quoi pourrait-on les remplacer ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : On peut les remplacer respectivement par Utilisateur_Devine, Machine_Devine et Jeu_Devin.
 
 
 --------------------------------------------------------------------------------
@@ -40,7 +40,7 @@ E1. Quelles sont les modifications à apporter à votre programme pour chercher
 des nombres compris entre 1 et 9999 ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : Il faut remplacer 999 par 9999 dans `Alea(1,999)` et changer les textes dans l'exo1 et il faut remplacer 1000 par 10000 dans `Sup := 1000;` dans l'exo2
 
 
 --------------------------------------------------------------------------------
@@ -49,7 +49,7 @@ puisse utiliser aussi les caractères <, > et = pour indiquer si le nombre
 proposé est trop petit, trop grand ou le bon ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : Il faut remplacer `when 'p' | 'P'` par `when 'p' | 'P' | '<'`, et de manière similaire pour > et =
 
 
 --------------------------------------------------------------------------------
