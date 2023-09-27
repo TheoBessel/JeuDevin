@@ -5,10 +5,10 @@ with Alea;
 -- Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D
 
 procedure Jeu_Devin_Exo2 is
-	Quitter : out Boolean;
-	Choisi, Devine : in out Boolean;
-	Choix : in out Character;
-	Nombre, Compteur, Inf, Sup : in out Integer;
+	Quitter : Boolean;
+	Choisi, Devine : Boolean;
+	Choix : Character;
+	Nombre, Compteur, Inf, Sup : Integer;
 -- Faire deviner à l'ordinateur un nombre choisi par l'utilisateur
 begin
 	-- Initialiser le jeu
@@ -55,8 +55,6 @@ begin
             	Put_Line("Vous trichez. J’arrête cette partie.");
 				-- Quitter le programme
 				Devine := True;
-				Put_Line("Au revoir...");
-    			Quitter := True;
 		end if;
 	end loop;
 end Jeu_Devin_Exo2;
