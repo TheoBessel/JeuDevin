@@ -2,9 +2,9 @@ with Text_Io;              use Text_Io;
 with Ada.Integer_Text_Io;  use Ada.Integer_Text_Io;
 with Alea;
 
--- Auteur : 
---
--- TODO: à compléter...
+-- Auteur : Antoine Lebeault - ENSEEIHT 1A SN - Groupe D
+
+
 procedure Jeu_Devin_Exo1 is
 	package Mon_Alea is 
 		new Alea( 1, 999); -- générateur de nombre dans l'intervalle [1, 999]
@@ -21,8 +21,6 @@ begin
 	Get_Random_Number(nb_ordi);
 	Put("J'ai choisi un nombre entre 1 et 999.");
 	New_Line;
-
-
 
 	nb_prop := 0;
 	loop
