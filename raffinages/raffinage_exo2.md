@@ -41,7 +41,7 @@ Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D1
 **R3** : **Comment** "Lire le choix de l'utilisateur" ?  
     **Lire** (Choix)  
     **Selon** Choix **Dans**  
-        'o' | 'O' => Choisi <- True  
+        'o' => Choisi <- True  
         Autres => **Écrire** ("J'attends...\n")  
     **FinSelon**  
   
@@ -57,9 +57,9 @@ Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D1
         **Écrire** ("Trop (g)rand, trop (p)etit ou (t)rouvé ?")  
         **Lire** (Choix)  
         **Selon** Choix **Dans**  
-            'g' | 'G' => Choisi <- True, Sup <- Nombre  
-            'p' | 'P' => Choisi <- True, Inf <- Nombre  
-            't' | 'T' => Choisi <- True, Devine <- True, **Écrire** ("J'ai trouvé ", Nombre, " en ", Compteur, " essai(s).\n\n")  
+            'g' => Choisi <- True, Sup <- Nombre  
+            'p' => Choisi <- True, Inf <- Nombre  
+            't' => Choisi <- True, Devine <- True, **Écrire** ("J'ai trouvé ", Nombre, " en ", Compteur, " essai(s).\n\n")  
             Autres => **Écrire** ("Je n'ai pas compris. Merci de répondre :\n  
                                     \t g si ma proposition est trop grande\n  
                                     \t p si ma proposition est trop petite\n  
@@ -67,7 +67,7 @@ Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D1
     FinTQ  
   
 **R3** : **Comment** "Vérifier que l'utilisateur ne triche pas" ?  
-    **Si** ((Sup - Inf) <= 1 Et Choix /= 't' | 'T') **Alors**  
+    **Si** ((Sup - Inf) <= 1 Et Choix /= 't') **Alors**  
             **Écrire** ("Vous trichez. J’arrête cette partie.\n")  
             Devine <- True  
     **FinSi**

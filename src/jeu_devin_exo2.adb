@@ -22,7 +22,7 @@ begin
 		-- Lire le choix de l'utilisateur
 		Get(Choix);
 		case Choix is
-			when 'o' | 'O' => Choisi := True;
+			when 'o' => Choisi := True;
 			when others => Put_Line("J'attends...");
 		end case;
 	end loop;
@@ -38,9 +38,9 @@ begin
 			Put("Trop (g)rand, trop (p)etit ou (t)rouvé ? ");
 			Get(Choix);
 			case Choix is
-				when 'g' | 'G' => Choisi := True; Sup := Nombre;
-				when 'p' | 'P' => Choisi := True; Inf := Nombre;
-				when 't' | 'T' => Choisi := True; Devine := True; Put_Line("J'ai trouvé "&Integer'Image(Nombre)&" en "&Integer'Image(Compteur)&" essai(s).");
+				when 'g' => Choisi := True; Sup := Nombre;
+				when 'p' => Choisi := True; Inf := Nombre;
+				when 't' => Choisi := True; Devine := True; Put_Line("J'ai trouvé "&Integer'Image(Nombre)&" en "&Integer'Image(Compteur)&" essai(s).");
 				when others => Put_Line("Je n'ai pas compris. Merci de répondre :");
 							   Put_Line("   g si ma proposition est trop grande");
 							   Put_Line("   p si ma proposition est trop petite");
@@ -48,7 +48,7 @@ begin
 			end case;
 		end loop;
 		-- Vérifier que l'utilisateur ne triche pas
-		if ((Sup - Inf) <= 1 and Choix /= 't' and Choix /= 'T') then
+		if ((Sup - Inf) <= 1 and Choix /= 't') then
             	Put_Line("Vous trichez. J’arrête cette partie.");
 				-- Quitter le programme
 				Devine := True;
