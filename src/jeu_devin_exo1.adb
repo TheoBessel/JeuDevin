@@ -6,8 +6,12 @@ with Alea;
 
 
 procedure Jeu_Devin_Exo1 is
+	
+	BORNE_MIN : constant Integer :=	1;
+	BORNE_MAX : constant Integer := 999;
+
 	package Mon_Alea is 
-		new Alea( 1, 999); -- générateur de nombre dans l'intervalle [1, 999]
+		new Alea( BORNE_MIN, BORNE_MAX); -- générateur de nombre dans l'intervalle [BORNE_MIN, BORNE_MAX]
 	use Mon_Alea;
 
 
@@ -19,7 +23,11 @@ begin
 	
 	-- Choisir le nombre de l'ordinateur
 	Get_Random_Number(nb_ordi);
-	Put("J'ai choisi un nombre compris entre 1 et 999.");
+	Put("J'ai choisi un nombre compris entre ");
+	Put(BORNE_MIN, 1);
+	Put(" et ");
+	Put(BORNE_MAX, 1);
+	Put(".");
 	New_Line;
 
 	nb_prop := 0;
