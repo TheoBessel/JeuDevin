@@ -17,14 +17,18 @@ Réponse : L'ordinateur détecte que l'utilisateur triche
 C2. Est-on sûr que Jeu_Devin_Exo1 se termine ?  Quel argument peut-on donner ?
 --------------------------------------------------------------------------------
 
-Réponse : Non. Si l'utilisateur fourni incessamment une proposition fausse sans la corriger le programme continue de lui demander une nouvelle proposition et ainsi ne termine jamais.
+Réponse : Non. Si l'utilisateur fourni incessamment une proposition fausse sans 
+la corriger le programme continue de lui demander une nouvelle proposition et 
+ainsi ne termine jamais.
 
 
 --------------------------------------------------------------------------------
 C3. Est-on sûr que Jeu_Devin_Exo2 se termine ?  Quel argument peut-on donner ?
 --------------------------------------------------------------------------------
 
-Réponse : Oui. En effet la quantité Sup-Inf est entière, strictement décroissante et minorée donc l'algorithme se termine quand l'ordinateur a trouvé ou détecté une triche de la part de l'utilisateur.
+Réponse : Oui. En effet la quantité Sup-Inf est entière, strictement décroissante
+et minorée donc l'algorithme se termine quand l'ordinateur a trouvé ou détecté 
+une triche de la part de l'utilisateur.
 
 
 --------------------------------------------------------------------------------
@@ -32,7 +36,8 @@ F1. Les noms Jeu_Devin_Exo1, Jeu_Devin_Exo2 et Jeu_Devin_Exo3 ne sont pas très
 parlants.  Par quoi pourrait-on les remplacer ?
 --------------------------------------------------------------------------------
 
-Réponse : On peut les remplacer respectivement par Utilisateur_Devine, Machine_Devine et Jeu_Devin.
+Réponse : On peut les remplacer respectivement par Utilisateur_Devine,
+Machine_Devine et Jeu_Devin.
 
 
 --------------------------------------------------------------------------------
@@ -40,8 +45,10 @@ E1. Quelles sont les modifications à apporter à votre programme pour chercher
 des nombres compris entre 1 et 9999 ?
 --------------------------------------------------------------------------------
 
-Réponse : Il faut remplacer la valeur de 999 par 9999 dans `Alea(1,999)` et changer les textes dans l'exo1 et il faut remplacer 1000 par 10000 dans `Sup := 1000;` dans l'exo2.
-          On pourrait aussi transformer le programme en remplaçant les littéraux par des constantes explicites MIN et MAX.
+Réponse : Il faut remplacer la valeur de 999 par 9999 dans `Alea(1,999)` et
+changer les textes dans l'exo1 et il faut remplacer 1000 par 10000 dans
+`Sup := 1000;` dans l'exo2. On pourrait aussi transformer le programme en 
+remplaçant les littéraux par des constantes explicites MIN et MAX.
 
 
 --------------------------------------------------------------------------------
@@ -50,7 +57,8 @@ puisse utiliser aussi les caractères <, > et = pour indiquer si le nombre
 proposé est trop petit, trop grand ou le bon ?
 --------------------------------------------------------------------------------
 
-Réponse : Il faut remplacer `when 'p' | 'P'` par `when 'p' | 'P' | '<'`, et de manière similaire pour > et =
+Réponse : Il faut remplacer `when 'p' | 'P'` par `when 'p' | 'P' | '<'`, et de 
+manière similaire pour > et =
 
 
 --------------------------------------------------------------------------------
@@ -58,7 +66,8 @@ E3. On veut limiter le nombre de tentatives à 10.  Si le nombre n'a pas été
 trouvé avant, le joueur a perdu.  Comment prendre en compte cette évolution ?
 --------------------------------------------------------------------------------
 
-Réponse : On change la condition `prop = n` de la boucle Jusqu'à du raffinage R1 en `prop = n OU nb_prop = 10`
+Réponse : On change la condition `prop = n` de la boucle Jusqu'à du raffinage R1
+en `prop = n OU nb_prop = 10`
 
 
 --------------------------------------------------------------------------------
@@ -67,7 +76,9 @@ Comment faire pour donner l'impression que le programme joue comme un humain
 tout en restant efficace ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : Plutôt que de proposer la moyenne de inf et de sup comme nombre, on
+peut proposer un entier aléatoire uniforme strictement compris entre ces deux
+bornes. On a alors un comportement plus naturel et tout aussi efficace.
 
 
 --------------------------------------------------------------------------------
@@ -77,8 +88,10 @@ une question. Le programme doit alors dire que l'utilisateur a abandonné la
 partie.  Comment faire ?
 --------------------------------------------------------------------------------
 
-Réponse : Dans l'exercice 1, on peut ajouter une variable booléenne qui est initialisé à Faux, vérifiée par la boucle répéter du R1 (qui quitte si ce booléen est à vrai) et 
-ajouter un cas supplémentaire dans R2 : Comment "Traiter la proposition du joueur" qui met ce booléen à Vrai si la proposition est 0.
+Réponse : Dans l'exercice 1, on peut ajouter une variable booléenne qui est 
+initialisé à Faux, vérifiée par la boucle répéter du R1 (qui quitte si ce 
+booléen est à vrai) et ajouter un cas supplémentaire dans R2 : Comment "Traiter
+la proposition du joueur" qui met ce booléen à Vrai si la proposition est 0.
 
 
 --------------------------------------------------------------------------------
@@ -86,7 +99,11 @@ E6. Quand le programme détecte que l'utilisateur a triché, comment faire pour
 que le programme explique au joueur quand il a triché ?
 --------------------------------------------------------------------------------
 
-Réponse : ...
+Réponse : Si l'on veut connaître le moment exact où l'utilisateur commence à
+tricher l'ordinateur doit demander au préalable de renseigner le nombre qu'il a
+choisi. On compare ensuite les réponses de l'utilisateur à ce chiffre pour 
+détecter où non la triche et on enregistre l'étape à laquelle l'utilisateur a 
+triché.
 
 
 --------------------------------------------------------------------------------
