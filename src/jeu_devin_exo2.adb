@@ -1,6 +1,5 @@
 with Text_Io;              use Text_Io;
 with Ada.Integer_Text_Io;  use Ada.Integer_Text_Io;
-with Alea;
 
 -- Auteur : Théo Bessel - ENSEEIHT 1A SN groupe D
 

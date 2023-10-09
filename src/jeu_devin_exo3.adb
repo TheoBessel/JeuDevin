@@ -1,6 +1,5 @@
 with Text_Io;              use Text_Io;
 with Ada.Integer_Text_Io;  use Ada.Integer_Text_Io;
-with Alea;
 with Jeu_Devin_Exo1;
 with Jeu_Devin_Exo2;
 
