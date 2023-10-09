@@ -7,8 +7,8 @@ with Jeu_Devin_Exo2;
 
 procedure Jeu_Devin_Exo3 is
 
-    Quitter: Boolean;
-    choix_int: Integer;
+    Quitter: Boolean; -- variable de contrôle pour savoir quand quitter le programme
+    choix_int: Integer; -- choix dans le menu
 
 begin
     Quitter := False;

@@ -7,6 +7,7 @@ with Alea;
 
 procedure Jeu_Devin_Exo1 is
 	
+	-- Bornes de l'ensemble pour les valeurs de jeu
 	BORNE_MIN : constant Integer :=	1;
 	BORNE_MAX : constant Integer := 999;
 
@@ -15,9 +16,9 @@ procedure Jeu_Devin_Exo1 is
 	use Mon_Alea;
 
 
-	nb_ordi: Integer;
-	nb_prop : Integer;
-	proposition_joueur: Integer;
+	nb_ordi: Integer; -- nombre tiré par au hasard par l'ordinateur
+	nb_prop : Integer; -- nombre de proposition éffectuées par l'utilisateur
+	proposition_joueur: Integer; -- dernière proposition faite par l'utilisateur
 
 begin
 	
